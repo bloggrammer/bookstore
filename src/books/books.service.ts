@@ -18,7 +18,7 @@ export class BooksService {
       where: { id },
     });
     if (!book) {
-      throw new NotFoundException(`Book with id ${id} not found.`);
+      throw new NotFoundException(`Book with id ${id} does not exist.`);
     }
     return book;
   }
