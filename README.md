@@ -5,34 +5,50 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">A basic REST API using <a href="http://nestjs.com" target="_blank">NestJS </a> framework and  <a href="https://www.prisma.io/" target="_blank">Prisma </a>.</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# NestJS - Backend REST API
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This repository contains a NestJS backend and Prisma.
 
-## Installation
+## Prerequisites:
+
+- Docker or a locally running MySQL installation
+- NodeJS 16+ (build with v18.12.1)
+- Code Editor (VSCode is recommended)
+
+## Tools and Technologies
+
+- [Node.js](https://nodejs.org/en/download/): Our runtime environment
+- [Docker](https://www.docker.com/get-started/): For containerizing our database
+- [Visual Studio Code](https://code.visualstudio.com/Download): Our code editor
+- [PostgreSQL](https://www.postgresql.org/download/): Our database
+- [NestJS](https://docs.nestjs.com/): Our Node.js framework
+- [JestJS](https://jestjs.io/): Our testing framework
+- [Prisma](https://www.prisma.io/): Our database toolkit
+- [PostgreSQL](https://www.postgresql.org/): object-relational database system.
+- [Swagger](https://swagger.io/): Our RESTful APIs documentation.
+- [TypeScript](https://www.typescriptlang.org/): A statically typed superset of JavaScript
+
+## Getting started:
+
+1.  Clone the repository `git clone https://github.com/bloggrammer/bookstore.git`
+2.  Navigate to the cloned directory `cd booksrore`
+3.  Install the dependencies `npm install`.
+4.  Create a `.env` file
 
 ```bash
-$ npm install
+    DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+
+    POSTGRES_USER=johndoe
+    POSTGRES_PASSWORD=randompassword
 ```
 
-## Running the app
+5. Adjust the `DATABASE_URL` with your PostgreSQL credentials (they already match the ones from the docker command above).
+6. If you don't have a local PostgreSQL database installation, start one with docker: `docker-compose up -d`
+7. Apply database migrations: `npx prisma migrate dev`
+8. Start the project:
 
 ```bash
 # development
@@ -45,7 +61,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+9. After the backend successfully starts, in a new terminal `npx prisma db seed` to seed the database with some initial data.
+10. You can now access the Swagger UI at http://localhost:3000 and test the API endpoints
+
+![API](app.png)
+
+### Test
 
 ```bash
 # unit tests
@@ -58,16 +79,10 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+![test](test.png)
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [John Ansa](https://www.linkedin.com/in/johnansa/)
+- Website - [https://bloggrammer.com](https://bloggrammer.com/)
+- Twitter - [@bloggrammer](https://twitter.com/bloggrammer)
